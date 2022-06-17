@@ -925,8 +925,8 @@
       </Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>"$(OutDir)injector.exe"
-powershell -nop -c "&amp; {sleep 15}"</Command>
+      <Command>
+      </Command>
       <Outputs>$(OutDir)_noexist.nope;%(Outputs)</Outputs>
       <Inputs>$(TargetPath);%(Inputs)</Inputs>
     </CustomBuildStep>
