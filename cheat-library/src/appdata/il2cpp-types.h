@@ -3556,6 +3556,11 @@ namespace app {
         float z;
     };
 
+    struct Vector2 {
+        float x;
+        float y;
+    };
+
     struct Vector3d {
         double x;
         double y;
@@ -4506,11 +4511,11 @@ namespace app {
         void* m_Corners;
     };
 
-   /*struct MaskableGraphic {
+   struct MaskableGraphic {
         struct MaskableGraphic__Class* klass;
         MonitorData* monitor;
         struct MaskableGraphic__Fields fields;
-    };*/
+    };
 
     struct Text__Fields {
         struct MaskableGraphic__Fields _;
@@ -4536,9 +4541,52 @@ namespace app {
         struct Text* vector[32];
     };
 
-    struct Vector2 {
-        float x;
-        float y;
+    enum class FontStyle__Enum : int32_t {
+        Normal = 0x00000000,
+        Bold = 0x00000001,
+        Italic = 0x00000002,
+        BoldAndItalic = 0x00000003,
+    };
+
+    enum class TextAnchor__Enum : int32_t {
+        UpperLeft = 0x00000000,
+        UpperCenter = 0x00000001,
+        UpperRight = 0x00000002,
+        MiddleLeft = 0x00000003,
+        MiddleCenter = 0x00000004,
+        MiddleRight = 0x00000005,
+        LowerLeft = 0x00000006,
+        LowerCenter = 0x00000007,
+        LowerRight = 0x00000008,
+    };
+
+    struct SimpleText__Fields {
+        struct MaskableGraphic__Fields _;
+        struct Shader* shader;
+        struct Font* m_Font;
+        int32_t m_FontSize;
+        FontStyle__Enum m_FontStyle;
+        TextAnchor__Enum m_Alignment;
+        bool m_OutlineEnabled;
+        struct Color m_OutlineColor;
+        struct Vector2 m_OutlineDistance;
+        bool m_IsTextMaterialParamsUpdating;
+        struct String* m_Text;
+        struct Color m_CachedColor;
+        struct Material* m_SimpleTextMaterial;
+        struct Material* m_ModifiedMaterial;
+        struct Vector3 m_CachedLossyScale;
+        struct Vector4__Array* m_CharUVandPosOffsets;
+        struct Vector3__Array* _Corners;
+        struct RectTransform* _canvasTransform;
+        struct UIVertex__Array* m_TempVerts;
+        struct Vector2__Array* m_TempOutlineOffset;
+    };
+
+    struct SimpleText {
+        struct SimpleText__Class* klass;
+        MonitorData* monitor;
+        struct SimpleText__Fields fields;
     };
 
     struct MonoLevelMap__Fields {
@@ -11933,6 +11981,16 @@ namespace app {
         Il2CppArrayBounds* bounds;
         il2cpp_array_size_t max_length;
         struct Material* vector[32];
+    };
+
+    struct SkinnedMeshRenderer__Fields {
+        struct Renderer__Fields _;
+    };
+
+    struct SkinnedMeshRenderer {
+        struct SkinnedMeshRenderer__Class* klass;
+        MonitorData* monitor;
+        struct SkinnedMeshRenderer__Fields fields;
     };
 
 #if !defined(_GHIDRA_) && !defined(_IDA_)

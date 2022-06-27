@@ -160,6 +160,7 @@ DO_APP_FUNC(0x027A41A0, Button_1*, ProfilePage, (MonoInLevelPlayerProfilePage* _
 DO_APP_FUNC(0x016A77B0, void, ProfileEditPage, (MonoFriendInformationDialog* __this, Sprite* value, MethodInfo* method)); // MonoFriendInformationDialog_set_icon 
 
 // Game Object, Component, Transform Utility
+DO_APP_FUNC(0x0662F610, void, GameObject__ctor, (GameObject* __this, String* name, MethodInfo* method));
 DO_APP_FUNC(0x0662F130, GameObject*, GameObject_Find, (String* name, MethodInfo* method));
 DO_APP_FUNC(0x0662F190, Component_1*, GameObject_GetComponentByName, (GameObject* __this, String* type, MethodInfo* method));
 DO_APP_FUNC(0x0662F660, bool, GameObject_get_active, (GameObject* __this, MethodInfo* method));
@@ -169,8 +170,11 @@ DO_APP_FUNC(0x0652EA10, Component_1*, Component_1_GetComponent_1, (Component_1* 
 DO_APP_FUNC(0x0662F520, void, GameObject_SetActive, (GameObject* __this, bool value, MethodInfo* method));
 DO_APP_FUNC(0x0662F100, GameObject*, GameObject_CreatePrimitive, (PrimitiveType__Enum type, MethodInfo* method));
 DO_APP_FUNC(0x0662F700, Transform*, GameObject_get_transform, (GameObject* __this, MethodInfo* method));
+DO_APP_FUNC(0x06555A60, Quaternion, Transform_get_localRotation, (Transform* __this, MethodInfo* method));
 DO_APP_FUNC(0x06555EF0, void, Transform_set_localRotation, (Transform* __this, Quaternion value, MethodInfo* method));
+DO_APP_FUNC(0x06555AA0, Vector3, Transform_get_localScale, (Transform* __this, MethodInfo* method));
 DO_APP_FUNC(0x065548E0, void, Transform_set_localScale, (Transform* __this, Vector3 value, MethodInfo* method));
+DO_APP_FUNC(0x06555A20, Vector3, Transform_get_localPosition, (Transform* __this, MethodInfo* method));
 DO_APP_FUNC(0x06555EE0, void, Transform_set_localPosition, (Transform* __this, Vector3 value, MethodInfo* method));
 DO_APP_FUNC(0x0662F090, Component_1*, GameObject_AddComponentInternal, (GameObject* __this, String* className, MethodInfo* method));
 DO_APP_FUNC(0x0662F0A0, Component_1*, GameObject_AddComponent, (GameObject* __this, Type* componentType, MethodInfo* method));
@@ -183,7 +187,9 @@ DO_APP_FUNC(0x0652EBC0, GameObject*, Component_1_get_gameObject, (Component_1* _
 DO_APP_FUNC(0x06551030, String*, Object_1_get_name, (Object_1* __this, MethodInfo* method));
 DO_APP_FUNC(0x0665DA90, Material__Array*, Renderer_GetMaterialArray, (Renderer* __this, MethodInfo* method));
 DO_APP_FUNC(0x0652FB40, void, Material_set_mainTexture, (Material* __this, Texture* value, MethodInfo* method));
-
+DO_APP_FUNC(0x06622D20, Transform__Array*, SkinnedMeshRenderer_get_bones, (SkinnedMeshRenderer* __this, MethodInfo* method));
+DO_APP_FUNC(0x06555B90, Transform*, Transform_get_parent, (Transform* __this, MethodInfo* method));
+DO_APP_FUNC(0x06555F10, void, Transform_set_parent, (Transform* __this, Transform* value, MethodInfo* method));
 
 // Music game event
 DO_APP_FUNC(0x00FFE490, void, MusicGamePlayComponent_OnPlayerUpdate, (MusicGamePlayComponent* __this, MethodInfo* method));
@@ -201,6 +207,8 @@ DO_APP_FUNC(0x00FFDE90, void, MusicGamePlayComponent_OnHit, (MusicGamePlayCompon
 // Utility
 DO_APP_FUNC(0x03551B60, String*, Text_get_text, (Text* __this, MethodInfo* method));
 DO_APP_FUNC(0x06568060, void, Text_set_text, (Text* __this, String* value, MethodInfo* method));
+DO_APP_FUNC(0x030DC310, String*, SimpleText_get_text, (SimpleText* __this, MethodInfo* method));
+DO_APP_FUNC(0x04F1E390, void, SimpleText_set_text, (SimpleText* __this, String* value, MethodInfo* method));
 DO_APP_FUNC(0x0658D6B0, void, Slider_1_set_value, (Slider_1* __this, float value, MethodInfo* method));
 DO_APP_FUNC(0x0658D560, void, Slider_1_set_maxValue, (Slider_1* __this, float value, MethodInfo* method));
 DO_APP_FUNC(0x0658D5E0, void, Slider_1_set_minValue, (Slider_1* __this, float value, MethodInfo* method));
@@ -322,6 +330,7 @@ DO_APP_FUNC(0x0664CF50, bool, Behaviour_get_isActiveAndEnabled, (Behaviour* __th
 DO_APP_FUNC(0x066306D0, Vector3, Quaternion_ToEulerAngles, (Quaternion rotation, MethodInfo* method));
 DO_APP_FUNC(0x066309A0, Vector3, Quaternion_get_eulerAngles, (Quaternion__Boxed* __this, MethodInfo* method));
 DO_APP_FUNC(0x06555C70, Quaternion, Transform_get_rotation, (Transform* __this, MethodInfo* method));
+DO_APP_FUNC(0x06555FE0, void, Transform_set_rotation, (Transform* __this, Quaternion value, MethodInfo* method));
 DO_APP_FUNC(0x06552F50, Rect, RectTransform_get_rect, (RectTransform* __this, MethodInfo* method));
 DO_APP_FUNC(0x06677BD0, float, Canvas_get_scaleFactor, (/*Canvas**/void* __this, MethodInfo* method));
 

@@ -50,6 +50,8 @@
 #include <cheat/visuals/Browser.h>
 #include <cheat/visuals/EnablePeaking.h>
 #include <cheat/visuals/TextureChanger.h>
+#include <cheat/visuals/BoobsChanger.h>
+
 
 #include "GenshinCM.h"
 
@@ -112,6 +114,7 @@ namespace cheat
 			FEAT_INST(Browser),
 			FEAT_INST(EnablePeaking),
 			FEAT_INST(TextureChanger),
+			FEAT_INST(BoobsChanger)
 			
 			});
 #undef FEAT_INST
