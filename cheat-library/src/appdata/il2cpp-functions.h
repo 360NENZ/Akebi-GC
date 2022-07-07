@@ -227,13 +227,15 @@ DO_APP_FUNC(0x03183FD0, Vector3, MoleMole_BaseEntity_GetUp, (BaseEntity* __this,
 DO_APP_FUNC(0x031A3310, bool, MoleMole_BaseEntity_IsActive, (BaseEntity* __this, MethodInfo* method));
 DO_APP_FUNC(0x031AE0E0, Rigidbody*, MoleMole_BaseEntity_GetRigidbody, (BaseEntity* __this, MethodInfo* method));
 
-//DO_APP_FUNC(0x039E22C0, MoleMole_VCBaseMove_1 *, MoleMole_BaseEntity_GetMoveComponent_1, (MoleMole_BaseEntity * __this, MethodInfo * method));
+// incorrect name
+// MoleMole_BaseEntity_GetVisualCombatComponent_1
+// MoleMole_VCBaseMove is not a type for this function
 DO_APP_FUNC(0x0596CA40, VCBaseMove*, MoleMole_BaseEntity_GetMoveComponent_1, (BaseEntity* __this, MethodInfo* method)); // double check
 DO_APP_FUNC(0x03186490, List_1_MoleMole_BaseComponent_*, MoleMole_BaseEntity_GetAllLogicComponents, (BaseEntity* __this, MethodInfo* method));
 DO_APP_FUNC(0x01E3B070, GameObject*, MoleMole_BaseEntity_get_gameObject, (BaseEntity* __this, MethodInfo* method));
 DO_APP_FUNC(0x031A1750, GameObject*, MoleMole_BaseEntity_get_rootGameObject, (BaseEntity* __this, MethodInfo* method));
-DO_APP_FUNC_METHODINFO(0x096EAD20, MoleMole_BaseEntity_GetMoveComponent_1__MethodInfo);
-DO_APP_FUNC_METHODINFO(0x099DCAE0, MoleMole_BaseEntity_GetLogicCombatComponent_1__MethodInfo);
+DO_APP_FUNC_METHODINFO(0x099DCAE0, MoleMole_BaseEntity_GetMoveComponent_1__MethodInfo);
+DO_APP_FUNC_METHODINFO(0x099D5408, MoleMole_BaseEntity_GetLogicCombatComponent_1__MethodInfo);
 DO_APP_FUNC(0x02F5D570, BaseEntity*, MoleMole_EntityManager_GetLocalAvatarEntity, (MoleMole_EntityManager* __this, MethodInfo* method));
 
 DO_APP_FUNC(0x02F56040, CameraEntity*, MoleMole_EntityManager_GetMainCameraEntity, (MoleMole_EntityManager* __this, MethodInfo* method));
@@ -311,7 +313,7 @@ DO_APP_FUNC(0x058D8870, float, Canvas_get_scaleFactor, (/*Canvas**/void* __this,
 
 
 // Singletons
-DO_APP_FUNC(0x06075EB0, void*, Singleton_GetInstance, (MethodInfo* method));
+DO_APP_FUNC(0x06075EB0, void*, Singleton_GetInstance, (MethodInfo* method));//DO_APP_FUNC(0x06075EB0, MoleMole_MapManager *, Singleton_1_MoleMole_MapManager__get_Instance, (MethodInfo * method));
 DO_APP_FUNC_METHODINFO(0x099D1B00, Singleton_1_MoleMole_MapModule__get_Instance__MethodInfo);
 DO_APP_FUNC_METHODINFO(0x099D3618, Singleton_1_MoleMole_LoadingManager__get_Instance__MethodInfo);
 DO_APP_FUNC_METHODINFO(0x099D0F48, Singleton_1_MoleMole_EntityManager__get_Instance__MethodInfo);
