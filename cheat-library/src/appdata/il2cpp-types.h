@@ -4157,6 +4157,13 @@ namespace app {
         EPFKMOIPADB = 0x00000013,
     };
 
+    enum class MoleMole_BaseEntity_ALHKCBEIIMI__Enum : int32_t {
+        Default = 0x00000000,
+        Appear = 0x00000001,
+        Revive = 0x00000002,
+        Reuse = 0x00000003,
+    };
+
     // Entity fields
     struct __declspec(align(8)) BaseEntity__Fields {
         struct Dictionary_2_System_UInt32_AIPerceptionInfo_* _aiPerceptionDic;
@@ -4180,6 +4187,7 @@ namespace app {
         struct ComponentManager* _logicComponentManager;
         struct ComponentManager* _visualComponentManager;
         bool _isInited;
+        bool EFNPDACKPCC;
         struct Action_1_EvtEntityTimeScaleChange_* _onLevelTimeScaleChange;
         struct Action* _syncAnimatorSpeed;
         struct Action* _onTimeScaleChangedByAbility;
@@ -4187,12 +4195,14 @@ namespace app {
         struct AbilityComponentProxy* _abilityProxy;
         struct TokenManager* _tokenMgr;
         VisionType__Enum _NLFDIGCIFIA_k__BackingField;
-        bool _createDuringReconnectingSceneInitFinish_k__BackingField;
-        bool _isCleared;
-        bool _checkRemoveifCached_k__BackingField;
-        bool _hasAddedInitialComponents;
-        float HLJJGAOMCGC;
-        bool _isEntityReady;
+        bool _KLBEFMDPLBE_k__BackingField;
+        MoleMole_BaseEntity_ALHKCBEIIMI__Enum BFFGPBFDOKG;
+        bool HBPLKCDOKGM;
+        bool OPIDLOEMPGL;
+        bool _CEFHAGFCHFC_k__BackingField;
+        bool FBEIALPDMLE;
+        float OCMDCLDBJLP;
+        bool MDNEKPFBFKE;
         struct Action_1_BaseEntity_* onComponentInitPostCallback;
         struct Action_1_BaseEntity_* onEntityReadyPreCallback;
         struct Action_1_BaseEntity_* onEntityReadyBeforePostCallback;
@@ -4205,15 +4215,16 @@ namespace app {
         bool isLightInitializationEntity;
         bool _canBeDestroied_k__BackingField;
         bool _isDestroying;
-        struct Action_1_BaseEntity_* onEntityRemovedCallback;
-        struct Action_1_BaseEntity_* onDestroyCallback;
-        bool _isAlive;
-        struct Action_1_BaseEntity_* onSetAliveFalseCallback;
-        bool _isActive;
-        struct Action_1_BaseEntity_* preAnimatorInitUpdateCallback;
-        bool _needSetActiveOnEntityReady;
-        bool _setActiveOnEntityReady;
-        struct Action_2_BaseEntity_Boolean_* onSetActiveCallback;
+        struct Action_1_FEJCMMPPPLN_* BDBGEPBDCOK;
+        struct Action_1_FEJCMMPPPLN_* FAFCKNAIIMB;
+        bool ANCCGPJDENC;
+        struct Action_1_FEJCMMPPPLN_* LDLHPKBLBMA;
+        bool NMGBCGLEDAJ;
+        struct Action_1_FEJCMMPPPLN_* GCOFKECOACI;
+        struct Action* BAAEBKEFIEF;
+        bool GHFGKKOCOLJ;
+        bool PPEIFOPHIKD;
+        struct Action_2_FEJCMMPPPLN_Boolean_* POGKLMCLEKG;
         bool _withGameObjWhenSetActive;
         bool _isLightActive;
         bool _playDefault;
@@ -4223,6 +4234,7 @@ namespace app {
         bool _duringSetComponentsEnabledOnSetActive_k__BackingField;
         float _lastTimeScale;
         float _timeScale;
+        float GALBNKDJLPA;
         bool ignoreLevelTimeScale;
         struct FixedStack_1_System_Single_* _timeScaleStack;
         struct LCAbilityState* _lcAblityState;
@@ -4315,6 +4327,7 @@ namespace app {
         struct Vector3 _lastPosInParent;
         struct Collider__Array* JFCGANLNHPN;
         int32_t JJJMCJIFFBM;
+        bool CECPNABKMAN;
         int32_t LNECJMABKIH;
         int32_t EICAFOKBIPN;
         bool KJFPMNMJPJA;
@@ -10802,7 +10815,13 @@ namespace app {
         struct MoleMole_LCAvatarCombat_MoleMole_LCAvatarCombat_SkillInfo__Fields fields;
     };
 
+    struct NHPNLKKPHHB__Fields {
+        void* _;
+        struct Dictionary_2_System_UInt32_NHPNLKKPHHB_GJICHDALOKB_* NMLJFBMGCHP;
+    };
+
     struct LCAvatarCombat__Fields {
+        struct NHPNLKKPHHB__Fields _;
         struct EntityTimer* _targetAtteTimer;
         struct EntityTimer* _targetFixTimer;
         struct Config_AvatarSkillDepotExcelConfig* _skillDepotConfig;
