@@ -89,7 +89,7 @@ namespace cheat
 			FEAT_INST(AutoDestroy),
 			FEAT_INST(AutoSeelie),
 			FEAT_INST(VacuumLoot),
-			//FEAT_INST(DialogSkip),
+			FEAT_INST(DialogSkip),
 			FEAT_INST(DumbEnemies),
 			FEAT_INST(ElementalSight),
 			FEAT_INST(KillAura),
@@ -104,8 +104,8 @@ namespace cheat
 			FEAT_INST(ESP),
 			FEAT_INST(InteractiveMap),
 
-			//FEAT_INST(AutoFish),
-			//FEAT_INST(AutoCook),
+			FEAT_INST(AutoFish),
+			FEAT_INST(AutoCook),
 
 			FEAT_INST(NoFog),
 			FEAT_INST(FPSUnlock),

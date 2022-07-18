@@ -2,7 +2,9 @@ name: Publish
 
 on:
    push:
-    branches: [ master ]
+    branches:
+      - master
+      - 2.8.5x-beta
 
 env:
   SOLUTION_FILE_PATH: ./akebi-gc.sln
