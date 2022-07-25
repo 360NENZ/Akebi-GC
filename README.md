@@ -12,10 +12,6 @@
 
 ---
 
-<h1 align="center">Warning</h1>
-Currently the support for 2.8 is under testing. So you can have bug with it. Also known issue with crashes for CN version.
-If you want to help us to do update faster - create PR for problem what you have after updating to 2.8, but of course, check if nobody created it already. 
-
 <h1 align="center">Getting Started</h1>
 
 ## Building from source
@@ -26,9 +22,15 @@ As well as setting up **`cheat-library`** as startup project.
 1. Open `Akebi-GC/akebi-gc.sln`
 1. Build solution `akebi-gc.sln`.
 
-## Release
+## Stable Release
 1. Head over to the releases page
 1. Download the latest binaries
+
+## Latest Release
+1. Head over to the [action](https://github.com/Akebi-Group/Akebi-GC/actions) page
+1. Click Publish workflow
+1. Select most recent workflow with green checkmark ✔
+1. Download Akebi-GC-release in Artifacts section
 
 ### Requirements
 - [Visual C++ Redistributable packages for Visual Studio 2015-2022](https://aka.ms/vs/17/release/vc_redist.x64.exe) (x64)
