@@ -57,9 +57,9 @@ namespace cheat::feature
             return;
 
         if (f_Enabled)
-        { 
+        {
             auto AvatarRoot = app::GameObject_Find(string_to_il2cppi("/EntityRoot/AvatarRoot"), nullptr);
-             
+
             if (AvatarRoot != nullptr)
             {
                 auto Transform = app::GameObject_GetComponentByName(AvatarRoot, string_to_il2cppi("Transform"), nullptr);
@@ -112,6 +112,7 @@ namespace cheat::feature
                                 auto obj_pathBoob = app::GameObject_Find(string_to_il2cppi("Boobs"), nullptr);
                                 if (obj_pathBoob != nullptr)
                                 {
+                                    LOG_DEBUG("obj_pathBoob");
                                     auto transform_pathBoob = app::GameObject_get_transform(pathBoob, nullptr);
                                     app::Transform_set_parent(transform_pathBoob, parent_L, nullptr);
                                     app::Transform_set_localScale(transform_pathBoob, localScale_L, nullptr);
@@ -120,6 +121,12 @@ namespace cheat::feature
 
                                     app::Transform_set_parent(parent_L, transform_pathBoob, nullptr);
                                     app::Transform_set_parent(parent_R, transform_pathBoob, nullptr);
+
+                                    app::Transform_set_parent(transform_L, transform_pathBoob, nullptr); //Breast to Boobs
+                                    app::Transform_set_parent(transform_R, transform_pathBoob, nullptr); //Breast to Boobs
+
+                                    app::Transform_set_localScale(transform_L, app::Vector3{ 10, 10, 10 }, nullptr);
+                                    app::Transform_set_localScale(transform_R, app::Vector3{ 10, 10, 10 }, nullptr);
                                 }
                                 f_BoobL, f_BoobR = true;
                             }
@@ -132,7 +139,7 @@ namespace cheat::feature
                 f_BoobL = false;
                 f_BoobR = false;
             }
-        }         
+        }
         nextUpdate = currentTime + (int)f_DelayUpdate;
     }
 }
