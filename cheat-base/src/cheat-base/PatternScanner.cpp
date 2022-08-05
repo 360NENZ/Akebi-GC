@@ -335,7 +335,6 @@ bool PatternScanner::IsValidModuleHash(HMODULE hModule, const nlohmann::json& ha
 	int64_t timestamp = hashObject["timestamp"];
 	size_t checksum = hashObject["checksum"];
 
-	auto aaaa = ComputeChecksum(GetModuleInfo(ua).filePath);
 	// To increase speed, we don't check checksum if timestamp matches
 	if (timestamp == currTimestamp)
 	{
