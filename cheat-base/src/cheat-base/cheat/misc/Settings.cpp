@@ -1,9 +1,14 @@
 #include <pch.h>
 #include "Settings.h"
 
-#include <cheat-base/render/gui-util.h>
-#include <cheat-base/render/renderer.h>
 #include <cheat-base/cheat/CheatManagerBase.h>
+#include <cheat-base/render/renderer.h>
+#include <cheat-base/render/gui-util.h>
+#include <misc/cpp/imgui_stdlib.h>
+#include <cheat-base/util.h>
+
+#include "shlwapi.h"
+#pragma comment(lib, "shlwapi.lib")
 
 namespace cheat::feature 
 {
@@ -11,6 +16,7 @@ namespace cheat::feature
 		NF(f_MenuKey, "Show Cheat Menu Key", "General", Hotkey(VK_F1)),
 		NF(f_HotkeysEnabled, "Hotkeys Enabled", "General", true),
 		NF(f_FontSize, "Font size", "General", 16.0f),
+		NF(f_ShowStyleEditor, "Show Style Editor", "General", false),
 
 		NF(f_StatusMove, "Move Status Window", "General::StatusWindow", true),
 		NF(f_StatusShow, "Show Status Window", "General::StatusWindow", true),
@@ -28,18 +34,52 @@ namespace cheat::feature
 		NF(f_ConsoleLogging, "Console Logging", "General::Logging", true),
 
 		NF(f_FastExitEnable, "Fast Exit", "General::FastExit", false),
-		NF(f_HotkeyExit, "Hotkeys", "General::FastExit", Hotkey(VK_F12))
-		
+		NF(f_HotkeyExit, "Hotkeys", "General::FastExit", Hotkey(VK_F12)),
+		NFS(f_DefaultTheme, "Theme", "General::Colors", "Default"),
+		themesDir(util::GetCurrentPath() / "themes")
+
     {
 		renderer::SetGlobalFontSize(static_cast<float>(f_FontSize));
 		f_HotkeyExit.value().PressedEvent += MY_METHOD_HANDLER(Settings::OnExitKeyPressed);
+		if (!std::filesystem::exists(themesDir))
+			std::filesystem::create_directory(themesDir);
     }
+	bool themeLoaded = false;
 
     const FeatureGUIInfo& Settings::GetGUIInfo() const
     {
         static const FeatureGUIInfo info{ "", "Settings", false };
         return info;
     }
+
+	void Settings::Colors_Export(std::string name)
+	{
+		ImGuiStyle &style = ImGui::GetStyle();
+		auto colors = style.Colors;
+
+		nlohmann::json json;
+		for (int i = 0; i < ImGuiCol_COUNT; i++)
+			json[ImGui::GetStyleColorName((ImGuiCol)i)] = {colors[i].x, colors[i].y, colors[i].z, colors[i].w};
+		std::ofstream file(themesDir / (name + ".json"));
+		file << std::setw(4) << json << std::endl;
+	}
+	
+	void Settings::Colors_Import(std::string name)
+	{
+		ImGuiStyle &style = ImGui::GetStyle();
+		auto colors = style.Colors;
+		nlohmann::json json;
+		std::ifstream file(themesDir / (name + ".json"));
+		file >> json;
+		for (int i = 0; i < ImGuiCol_COUNT; i++)
+		{
+			auto color = json[ImGui::GetStyleColorName((ImGuiCol)i)];
+			colors[i].x = color[0];
+			colors[i].y = color[1];
+			colors[i].z = color[2];
+			colors[i].w = color[3];
+		}
+	}
 
 	void Settings::DrawMain()
 	{
@@ -55,6 +95,7 @@ namespace cheat::feature
 				f_FontSize = std::clamp(f_FontSize.value(), 8, 64);
 				renderer::SetGlobalFontSize(static_cast<float>(f_FontSize));
 			}
+			ConfigWidget(f_ShowStyleEditor, "Show interface style editor window.");
 		}
 		ImGui::EndGroupPanel();
 
@@ -121,6 +162,48 @@ namespace cheat::feature
 				ImGui::EndDisabled();
 		}
 		ImGui::EndGroupPanel();
+
+		ImGui::BeginGroupPanel("Colors");
+		{
+			static std::string nameBuffer_;
+				
+			if (this->f_DefaultTheme.value() != "Default" && !themeLoaded)
+			{
+				LOG_INFO("Loading theme: %s", themesDir / (f_DefaultTheme.value() + ".json").c_str());
+				if (!std::filesystem::exists(themesDir / (f_DefaultTheme.value() + ".json")))
+				{
+					LOG_ERROR("Theme file not found: %s", themesDir / (f_DefaultTheme.value() + ".json").c_str());
+					f_DefaultTheme = "Default";
+					themeLoaded = true;
+				}
+				else
+				{
+					Colors_Import(f_DefaultTheme.value());
+					themeLoaded = true;
+					LOG_INFO("Loaded theme \"%s\"", f_DefaultTheme.value().c_str());
+				}
+			}
+
+			ImGui::InputText("Name", &nameBuffer_);
+			if (std::filesystem::exists(themesDir / (nameBuffer_ + ".json")))
+			{
+				if (this->f_DefaultTheme.value() != nameBuffer_)
+					if (ImGui::Button("Set as default"))
+						f_DefaultTheme = nameBuffer_;
+				if (ImGui::Button("Load"))
+				{
+					Colors_Import(nameBuffer_);
+					themeLoaded = true;
+				}
+			}
+			else
+			{
+				ImGui::Text("Theme does not exist.");
+			}
+			if (ImGui::Button("Save"))
+				Colors_Export(nameBuffer_);
+		}
+		ImGui::EndGroupPanel();
 	}
 
     Settings& Settings::GetInstance()
@@ -137,4 +220,3 @@ namespace cheat::feature
 		ExitProcess(0);
 	}
 }
-
