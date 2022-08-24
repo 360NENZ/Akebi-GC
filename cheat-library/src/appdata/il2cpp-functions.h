@@ -117,7 +117,7 @@ DO_APP_FUNC(0x05467510, bool, MoleMole_FixedBoolStack_get_value, (FixedBoolStack
 
 // 3.0 changed to 'MoleMole_EventHelper_Allocate_5'
 DO_APP_FUNC(0x05CFFCA0, EvtCrash*, MoleMole_EventHelper_Allocate_103, (MethodInfo* method));
-DO_APP_FUNC_METHODINFO(0x09EEE038, MoleMole_EventHelper_Allocate_103__MethodInfo);
+DO_APP_FUNC_METHODINFO(0x09E8CAF8, MoleMole_EventHelper_Allocate_103__MethodInfo);
 
 DO_APP_FUNC(0x01FA6BC0, void, MoleMole_BaseMoveSyncPlugin_ConvertSyncTaskToMotionInfo, (BaseMoveSyncPlugin* __this, MethodInfo* method));
 
