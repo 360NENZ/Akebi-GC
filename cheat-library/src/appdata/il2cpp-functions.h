@@ -273,7 +273,7 @@ DO_APP_FUNC(0x05D01FE0, VCBaseMove*, MoleMole_BaseEntity_GetMoveComponent_1, (Ba
 DO_APP_FUNC_METHODINFO(0x09E8C980, MoleMole_BaseEntity_GetMoveComponent_1__MethodInfo);
 
 DO_APP_FUNC(0x01EAD0B0, List_1_MoleMole_BaseComponent_*, MoleMole_BaseEntity_GetAllLogicComponents, (BaseEntity* __this, MethodInfo* method));
-DO_APP_FUNC(0x01EAE1A0, GameObject*, MoleMole_BaseEntity_get_gameObject, (BaseEntity* __this, MethodInfo* method));
+DO_APP_FUNC(0x01EAAF30, GameObject*, MoleMole_BaseEntity_get_gameObject, (BaseEntity* __this, MethodInfo* method));
 DO_APP_FUNC(0x02A56B00, GameObject*, MoleMole_BaseEntity_get_rootGameObject, (BaseEntity* __this, MethodInfo* method));
 
 // type should be 'MoleMole_AvatarEntity' not 'MoleMole_BaseEntity'
