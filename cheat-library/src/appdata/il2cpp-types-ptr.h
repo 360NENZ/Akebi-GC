@@ -5,14 +5,14 @@
 // * IL2CPP application-specific type definition addresses
 // ******************************************************************************
 
-DO_TYPEDEF(0x09E19C78, Int32);
-DO_TYPEDEF(0x09E19D88, Byte);
-DO_TYPEDEF(0x09E2CCC0, GameManager);
+DO_TYPEDEF(0x0A3E70E8, Int32);
+DO_TYPEDEF(0x0A3E71F8, Byte);
+DO_TYPEDEF(0x0A3F4BE8, GameManager);
 
-// v 3.0
-DO_TYPEDEF(0x09E389C8, LCChestPlugin);
-DO_TYPEDEF(0x09E29B98, SceneTreeObject);
-DO_TYPEDEF(0x09E40968, MoleMole_ActorModifier);
+// v 3.0.50
+DO_TYPEDEF(0x0A42D720, LCChestPlugin);
+DO_TYPEDEF(0x0A3F6980, SceneTreeObject);
+DO_TYPEDEF(0x0A40A7B8, MoleMole_ActorModifier);
 
 //// v 2.6
 //DO_SINGLETONEDEF(0x0B3442D8, Singleton_1_MoleMole_MapModule_);

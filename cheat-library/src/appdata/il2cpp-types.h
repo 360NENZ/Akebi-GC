@@ -4158,6 +4158,13 @@ namespace app {
         DGAHPCMJBNI = 0x00000013,
     };
 
+    enum class LGLACLJGPIN_OJDAJHLOKFP__Enum : int32_t {
+        Default = 0x00000000,
+        Appear = 0x00000001,
+        Revive = 0x00000002,
+        Reuse = 0x00000003,
+    };
+
     // Entity fields
     struct __declspec(align(8)) BaseEntity__Fields {
         struct Dictionary_2_System_UInt32_AIPerceptionInfo_* _aiPerceptionDic;
@@ -4181,6 +4188,7 @@ namespace app {
         struct ComponentManager* _logicComponentManager;
         struct ComponentManager* _visualComponentManager;
         bool _isInited;
+        bool HBADEFFNHHA;
         struct Action_1_EvtEntityTimeScaleChange_* _onLevelTimeScaleChange;
         struct Action* _syncAnimatorSpeed;
         struct Action* _onTimeScaleChangedByAbility;
@@ -4188,6 +4196,8 @@ namespace app {
         struct AbilityComponentProxy* _abilityProxy;
         struct TokenManager* _tokenMgr;
         VisionType__Enum _NLFDIGCIFIA_k__BackingField;
+        bool _MMIHONCELFL_k__BackingField;
+        LGLACLJGPIN_OJDAJHLOKFP__Enum BBAPPCBMJGE;
         bool _createDuringReconnectingSceneInitFinish_k__BackingField;
         bool _isCleared;
         bool _checkRemoveifCached_k__BackingField;
@@ -4212,6 +4222,7 @@ namespace app {
         struct Action_1_BaseEntity_* onSetAliveFalseCallback;
         bool _isActive;
         struct Action_1_BaseEntity_* preAnimatorInitUpdateCallback;
+        struct Action* PHEKMGALKEI;
         bool _needSetActiveOnEntityReady;
         bool _setActiveOnEntityReady;
         struct Action_2_BaseEntity_Boolean_* onSetActiveCallback;
@@ -12125,6 +12136,46 @@ namespace app {
         ForceTriggerOnExitImediately = 0x00000002,
         ForceTriggerOnExitTransition = 0x00000003,
         ForceTriggerOnExitTransitionFinish = 0x00000004,
+    };
+
+    enum class KIOMHHDFLGB__Enum : int32_t {
+        JAEEILGFCIF = 0x00000000,
+        GPBMPFOFKPI = 0x00000001,
+        PDNEMDNJLAK = 0x00000002,
+        CNONBPNAGKM = 0x00000003,
+    };
+
+    struct Proto_PlayerLuaShellNotify__Fields {
+        struct MessageBase_1__Fields _;
+        KIOMHHDFLGB__Enum KJGNKMBMJAF;
+        uint32_t KDEAHJMLKOH;
+        struct JIBNKGMEPOL* CBPBIHBNKPB;
+        uint32_t PDHPAMDOCIL;
+    };
+
+    struct Proto_PlayerLuaShellNotify {
+        struct Proto_PlayerLuaShellNotify__Class* klass;
+        MonitorData* monitor;
+        struct Proto_PlayerLuaShellNotify__Fields fields;
+    };
+
+    enum class Proto_WindSeedClientNotify_Proto_WindSeedClientNotify_NotifyOneofCase__Enum : int32_t {
+        None = 0x00000000,
+        RefreshNotify = 0x0000000e,
+        AddWindBulletNotify = 0x00000006,
+        AreaNotify = 0x00000004,
+    };
+
+    struct Proto_WindSeedClientNotify__Fields {
+        struct MessageBase_1__Fields _;
+        struct Object* notify_;
+        Proto_WindSeedClientNotify_Proto_WindSeedClientNotify_NotifyOneofCase__Enum BIICPNABLEO;
+    };
+
+    struct Proto_WindSeedClientNotify {
+        struct Proto_WindSeedClientNotify__Class* klass;
+        MonitorData* monitor;
+        struct Proto_WindSeedClientNotify__Fields fields;
     };
 
 #if !defined(_GHIDRA_) && !defined(_IDA_)

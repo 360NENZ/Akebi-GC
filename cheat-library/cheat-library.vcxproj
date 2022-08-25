@@ -20,6 +20,7 @@
     <ClInclude Include="src\user\cheat\misc\sniffer\pipe\messages\PipePacketData.h" />
     <ClInclude Include="src\user\cheat\misc\sniffer\pipe\PipeClient.h" />
     <ClInclude Include="src\user\cheat\misc\sniffer\pipe\PipeIO.h" />
+    <ClInclude Include="src\user\cheat\misc\WindSeedBypass.h" />
     <ClInclude Include="src\user\cheat\player\AutoRun.h" />
     <ClInclude Include="src\user\cheat\visuals\AnimationChanger.h" />
     <ClInclude Include="src\user\cheat\player\FallControl.h" />
@@ -115,6 +116,7 @@
     <ClCompile Include="src\user\cheat\misc\sniffer\pipe\messages\PipePacketData.cpp" />
     <ClCompile Include="src\user\cheat\misc\sniffer\pipe\PipeClient.cpp" />
     <ClCompile Include="src\user\cheat\misc\sniffer\pipe\PipeIO.cpp" />
+    <ClCompile Include="src\user\cheat\misc\WindSeedBypass.cpp" />
     <ClCompile Include="src\user\cheat\player\AutoRun.cpp" />
     <ClCompile Include="src\user\cheat\visuals\AnimationChanger.cpp" />
     <ClCompile Include="src\user\cheat\player\FallControl.cpp" />

@@ -1,12 +1,12 @@
 {
-  "game_version": "3.0",
+  "game_version": "OSCBWin3.0.50",
   "modules": {
     "UnityPlayer.dll": {
-      "checksum": 18225598526199471527,
+      "checksum": 16946284151351594649,
       "timestamp": 0
     },
     "UserAssembly.dll": {
-      "checksum": 10799527772725786707,
+      "checksum": 3684235492437964931,
       "timestamp": 0
     }
   }

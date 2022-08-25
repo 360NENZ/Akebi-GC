@@ -2,7 +2,7 @@ name: Publish
 
 on:
    push:
-    branches: [ master ]
+    branches: [ OSCBWin3.0.5x ]
 
 env:
   SOLUTION_FILE_PATH: ./akebi-gc.sln
