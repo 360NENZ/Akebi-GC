@@ -280,7 +280,7 @@ namespace cheat::game::filters
 		SimpleFilter KalpalataLotus = { EntityType__Enum_1::GatherObject, "_Kalpalata" };
 		SimpleFilter NilotpalaLotus = { EntityType__Enum_1::GatherObject, "_MoonLotus" };
 		SimpleFilter Padisarah = { EntityType__Enum_1::GatherObject, "_Pasusalan" };
-		SimpleFilter RukkhashavaMushrooms = { EntityType__Enum_1::GatherObject, "_HolyMushroom" };
+		SimpleFilter RukkhashavaMushroom = { EntityType__Enum_1::GatherObject, "_HolyMushroom" };
 		SimpleFilter SumeruRose = { EntityType__Enum_1::GatherObject, "_XumiRose" };
 		SimpleFilter Viparyas = { EntityType__Enum_1::GatherObject, "_DreamerPlant" };
 		SimpleFilter ZaytunPeach = { EntityType__Enum_1::GatherObject, "_Olea" };
@@ -325,8 +325,8 @@ namespace cheat::game::filters
 		WhitelistFilter DreamForm = { {EntityType__Enum_1::Field, EntityType__Enum_1::Platform }, "_AnimalSeelie" };
 		SimpleFilter StarlightCoalescence = { EntityType__Enum_1::Field, "_PaperStar" };
 		SimpleFilter TheRavenForum = { EntityType__Enum_1::Gadget, "_NightCrowStatue" };
-		WhitelistFilter TimeTrialChallengeCollection = { { EntityType__Enum_1::Field, EntityType__Enum_1::Gadget }, { "SkillObj_EmptyGadget", "_GlideChampOrb", "_DendroGlideChampOrb" } };
-		SimpleFilter Bombbarrel = { EntityType__Enum_1::Gadget, "_Bombbarrel" };
+		WhitelistFilter TimeTrialChallengeCollection = { { EntityType__Enum_1::Field, EntityType__Enum_1::Gadget }, { "SkillObj_EmptyGadget", "_GlideChampOrb", "_DendroGlideChampOrb", "_DreamlandSpirit" } };
+		SimpleFilter Bombbarrel = { EntityType__Enum_1::Gadget, { "_Bombbarrel", "_XuMiBombBox" } };
 		SimpleFilter NurseriesInTheWilds = { EntityType__Enum_1::Field, "PlantDrawStart" };
 		SimpleFilter SaghiraMachine = { EntityType__Enum_1::Gadget, "FatuiMaranaWell" };
 		SimpleFilter StonePillarSeal = { EntityType__Enum_1::Gadget, "GrassSealRing_" };

@@ -361,6 +361,8 @@ DO_APP_FUNC(0x03066A90, void, LevelTimeManager_SetInternalTimeOfDay, (/*LevelTim
 // Open team immediately
 // F3 0F 10 83 ?? ?? ?? ?? 0F 29 74 24 30 F3 0F 10 B3 ?? ?? ?? ?? 
 DO_APP_FUNC(0x01387770, bool, MoleMole_InLevelMainPageContext_DoTeamCountDown_c_Iterator0__MoveNext, (InLevelMainPageContext_DoTeamCountDown_Iterator* __this, MethodInfo* method));
+DO_APP_FUNC(0x00A1CE30, void, MoleMole_InLevelPlayerProfilePageContext_SetupView, (/*MoleMole_InLevelPlayerProfilePageContext*/void* __this, MethodInfo* method));
+DO_APP_FUNC(0x00A15410, void, MoleMole_InLevelPlayerProfilePageContext_ClearView, (/*MoleMole_InLevelPlayerProfilePageContext*/void* __this, MethodInfo* method));
 
 
 // Singletons
