@@ -367,7 +367,11 @@ namespace cheat::game::filters
 			plant::MistFlowerCorolla,
 			plant::FlamingFlowerStamen
 		};
-
+		SimpleFilter BreakableObjects = {
+			puzzle::AncientRime,
+			puzzle::LargeRockPile,
+			puzzle::SmallRockPile
+		};
 		WhitelistFilter Doodads = {
 			EntityType__Enum_1::Gadget,
 			{
