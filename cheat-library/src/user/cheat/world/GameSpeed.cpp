@@ -54,20 +54,26 @@ namespace cheat::feature
     void GameSpeed::OnGameUpdate()
     {
         static bool isSpeed = false;
-        if (f_Enabled ? f_HotKey.value().IsPressed() : Hotkey(ImGuiKey_CapsLock).IsPressed() && !isSpeed)
+        if (f_Enabled ? f_HotKey.value().IsPressed() : Hotkey(ImGuiKey_CapsLock).IsPressed())
         {
-            isSpeed = true;
-            float currentSpeed = app::Time_get_timeScale(nullptr);
-            if (currentSpeed == 1.0f)
-                app::Time_set_timeScale(f_Speed, nullptr);
+            if (!isSpeed)
+            {
+                isSpeed = true;
+                float currentSpeed = app::Time_get_timeScale(nullptr);
+                if (currentSpeed == 1.0f)
+                    app::Time_set_timeScale(f_Speed, nullptr);
+            }
         }
 
-        if (f_Enabled ? !f_HotKey.value().IsPressed() : !Hotkey(ImGuiKey_CapsLock).IsPressed() && isSpeed)
+        if (f_Enabled ? !f_HotKey.value().IsPressed() : !Hotkey(ImGuiKey_CapsLock).IsPressed())
         {
-            isSpeed = false;
-            float currentSpeed = app::Time_get_timeScale(nullptr);
-            if (currentSpeed != 1.0f)
-                app::Time_set_timeScale(1.0f, nullptr);
+            if (isSpeed)
+            {
+                isSpeed = false;
+                float currentSpeed = app::Time_get_timeScale(nullptr);
+                if (currentSpeed != 1.0f)
+                    app::Time_set_timeScale(1.0f, nullptr);
+            }
         }
         // float gameSpeed = app::Time_get_timeScale(nullptr);
         //LOG_DEBUG("GameSpeed: %f Enabled: %d Value: %f Key: %s", gameSpeed, f_GameSpeedEnabled, f_GameSpeedVal, f_GameSpeedKey);
