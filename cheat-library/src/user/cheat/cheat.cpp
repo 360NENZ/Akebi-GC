@@ -31,6 +31,7 @@
 #include <cheat/world/FakeTime.h>
 #include <cheat/world/AutoSeelie.h>
 #include <cheat/world/VacuumLoot.h>
+#include <cheat/world/GameSpeed.h>
 
 #include <cheat/teleport/ChestTeleport.h>
 #include <cheat/teleport/MapTeleport.h>
@@ -116,6 +117,7 @@ namespace cheat
 
 			FEAT_INST(AutoFish),
 			FEAT_INST(AutoCook),
+			FEAT_INST(GameSpeed),
 
 			FEAT_INST(CustomWeather),
 
