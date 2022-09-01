@@ -9,7 +9,7 @@ namespace cheat::feature
 {
     GameSpeed::GameSpeed() : Feature(),
         NF(f_Enabled, "GameSpeed Enabled", "GameSpeed", false),
-        NF(f_HotKey, "GameSpeed HotKey", "GameSpeed", Hotkey(ImGuiKey_CapsLock)),
+        NF(f_Hotkey, "GameSpeed HotKey", "GameSpeed", Hotkey(VK_CAPITAL)),
         NF(f_Speed, "GameSpeed Multiplier", "GameSpeed", 5.0f)
     {
         events::GameUpdateEvent += MY_METHOD_HANDLER(GameSpeed::OnGameUpdate);
@@ -23,14 +23,12 @@ namespace cheat::feature
 
     void GameSpeed::DrawMain()
     {
-        ConfigWidget("GameSpeed Enabled", f_Enabled, "Speeds Up Game with HotKey");
+        ConfigWidget("GameSpeed Enabled", f_Enabled, "Speeds up game with hotkey");
         if (f_Enabled)
         {
-            ConfigWidget("GameSpeed HotKey", f_HotKey, "Set GameSpeed HotKey");
-            ConfigWidget(f_Speed, 1.0f, 1.0f, 15.0f, "Set GameSpeed Multiplier\n" \
-			"Multiplier is a multiplicity of 1.0f for how much faster the game should run.\n" \
-			"Do NOT Use this in the Open World, only use in Menus/etc, VERY DANGEROUS!"
-			);
+            ConfigWidget("GameSpeed Hotkey", f_Hotkey);
+            ConfigWidget(f_Speed, 1.0f, 0.0f, 20.0f, "Set GameSpeed Multiplier\n" \
+                "Do NOT use this in the Open World, only use in menus/etc, VERY DANGEROUS!");
         }
     }
 
@@ -41,7 +39,7 @@ namespace cheat::feature
 
     void GameSpeed::DrawStatus()
     {
-		ImGui::Text("GameSpeed");
+        ImGui::Text("GameSpeed");
     }
 
     GameSpeed& GameSpeed::GetInstance()
@@ -50,33 +48,42 @@ namespace cheat::feature
         return instance;
     }
 
-    // Raised On Game Update
     void GameSpeed::OnGameUpdate()
     {
         static bool isSpeed = false;
-        if (f_Enabled ? f_HotKey.value().IsPressed() : Hotkey(ImGuiKey_CapsLock).IsPressed())
+        float currentSpeed = app::Time_get_timeScale(nullptr);
+
+        if (f_Enabled)
         {
-            if (!isSpeed)
+            if (f_Hotkey.value().IsPressed() && !isSpeed)
             {
-                isSpeed = true;
-                float currentSpeed = app::Time_get_timeScale(nullptr);
                 if (currentSpeed == 1.0f)
+                {
                     app::Time_set_timeScale(f_Speed, nullptr);
+                    isSpeed = true;
+                }
+            }
+
+            if (!f_Hotkey.value().IsPressed() && isSpeed)
+            {
+                if (currentSpeed != 1.0f)
+                {
+                    app::Time_set_timeScale(1.0f, nullptr);
+                    isSpeed = false;
+                }
             }
         }
-
-        if (f_Enabled ? !f_HotKey.value().IsPressed() : !Hotkey(ImGuiKey_CapsLock).IsPressed())
+        else
         {
+            // Aditional check if user is still pressing key and they decide to disable the feature
             if (isSpeed)
             {
-                isSpeed = false;
-                float currentSpeed = app::Time_get_timeScale(nullptr);
                 if (currentSpeed != 1.0f)
+                {
                     app::Time_set_timeScale(1.0f, nullptr);
+                    isSpeed = false;
+                }
             }
         }
-        // float gameSpeed = app::Time_get_timeScale(nullptr);
-        //LOG_DEBUG("GameSpeed: %f Enabled: %d Value: %f Key: %s", gameSpeed, f_GameSpeedEnabled, f_GameSpeedVal, f_GameSpeedKey);
     }
 }
-
