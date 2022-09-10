@@ -301,6 +301,7 @@ DO_APP_FUNC(0x0143BB60, void, MoleMole_LCAbilityElement_ReduceModifierDurability
 DO_APP_FUNC(0x0218C0F0, BaseEntity*, MoleMole_GadgetEntity_GetOwnerEntity, (GadgetEntity* __this, MethodInfo* method));
 
 DO_APP_FUNC(0x02738030, bool, MoleMole_UIManager_HasEnableMapCamera, (MoleMole_UIManager* __this, MethodInfo* method));
+DO_APP_FUNC(0x0272B950, void, MoleMole_UIManager_EnableInput, (MoleMole_UIManager* __this, bool playerInput, bool clearCurInputState, bool ignoreTouch, MethodInfo* method));
 
 DO_APP_FUNC(0x010ED480, void, MonoMiniMap_Update, (MonoMiniMap* __this, MethodInfo* method));
 DO_APP_FUNC(0x02DA4900, MonoMiniMap*, MonoInLevelMainPage_get_miniMap, (void* __this, MethodInfo* method));
