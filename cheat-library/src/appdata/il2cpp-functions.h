@@ -141,6 +141,7 @@ DO_APP_FUNC(0x01CA4600, void, MoleMole_FishingModule_onFishChosenNotify, (void* 
 // Visuals
 DO_APP_FUNC(0x02F620D0, void, MoleMole_SCameraModuleInitialize_SetWarningLocateRatio, (SCameraModuleInitialize* __this, double deltaTime, CameraShareData* data, MethodInfo* method));
 DO_APP_FUNC(0x0260A880, void, MoleMole_VCBaseSetDitherValue_set_ManagerDitherAlphaValue, (MoleMole_VCBaseSetDitherValue* __this, float value, MethodInfo* method));
+DO_APP_FUNC(0x014CE450, void, MoleMole_PlayerModule_EntityAppear, (MoleMole_PlayerModule* __this, Proto_SceneEntityInfo* entity, VisionType__Enum type, uint32_t infoParam, MethodInfo* method));
 
 // Chest Indicator | RyujinZX#6666
 DO_APP_FUNC(0x0361FBA0, bool, MoleMole_LCIndicatorPlugin_DoCheck, (LCIndicatorPlugin* __this, MethodInfo* method));
