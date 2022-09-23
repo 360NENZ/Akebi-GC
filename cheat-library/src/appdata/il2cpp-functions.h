@@ -350,6 +350,7 @@ DO_APP_FUNC(0x05BD9A10, void, Animator_Play, (Animator* __this, String* stateNam
 DO_APP_FUNC(0x05BD9B90, void, Animator_Rebind, (Animator* __this, MethodInfo* method));
 DO_APP_FUNC(0x05BDA0C0, float, Animator_get_speed, (Animator* __this, MethodInfo* method));
 DO_APP_FUNC(0x05BDA1F0, void, Animator_set_speed, (Animator* __this, float value, MethodInfo* method));
+DO_APP_FUNC(0x04E513E0, String*, Extension_GetCurrentStateName, (Animator* animator, int32_t layer, AnimatorController* animCont, MethodInfo* method));
 
 DO_APP_FUNC(0x05C5B050, bool, Behaviour_get_isActiveAndEnabled, (Behaviour* __this, MethodInfo* method));
 
