@@ -7,7 +7,7 @@
 [submodule "cheat-base/vendor/magic_enum"]
 	path = cheat-base/vendor/magic_enum
 	url = https://github.com/Neargye/magic_enum.git
-[submodule "cheat-library/vendor/json"]
+[submodule "cheat-base/vendor/json"]
 	path = cheat-base/vendor/json
 	url = https://github.com/nlohmann/json.git
 [submodule "cheat-base/vendor/stb"]
