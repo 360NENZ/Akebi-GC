@@ -23,6 +23,8 @@ int main(int argc, char* argv[])
 	auto path = std::filesystem::path(argv[0]).parent_path();
 	current_path(path);
 
+	SetDebugPrivilege();
+
 	WaitForCloseProcess(GlobalGenshinProcName);
 	WaitForCloseProcess(ChinaGenshinProcName);
 

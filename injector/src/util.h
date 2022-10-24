@@ -6,3 +6,4 @@
 
 int FindProcessId(const std::string& processName);
 void WaitForCloseProcess(const std::string& processName);
+bool SetDebugPrivilege();
